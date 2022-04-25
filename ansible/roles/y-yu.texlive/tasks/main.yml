@@ -47,7 +47,7 @@
 
 - name: "Symlink LaTeX binaries"
   shell: 
-    cmd: "ln -s {{ texlive_directory }}/bin/x86_64-{{ os }}/* /usr/local/bin"
+    cmd: "ln -s -f {{ texlive_directory }}/bin/x86_64-{{ os }}/* /usr/local/bin"
     creates: /usr/local/bin/pdflatex
 
 - debug: msg="{{ latex.stdout }}"
